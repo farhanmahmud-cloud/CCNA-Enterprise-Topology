@@ -1,0 +1,24 @@
+R1#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet0/0     10.10.10.1      YES manual up                    up
+GigabitEthernet0/1     10.10.20.1      YES manual down                  down
+GigabitEthernet0/2     unassigned      YES unset  administratively down down
+Vlan1                  unassigned      YES unset  administratively down down
+
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#interface GigabitEthernet 0/1
+R1(config-if)#no shutdown
+
+R1(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+R1(config-if)#do show ip route
+Gateway of last resort is not set
+
+     10.0.0.0/8 is variably subnetted, 4 subnets, 2 masks
+C       10.10.10.0/24 is directly connected, GigabitEthernet0/0
+L       10.10.10.1/32 is directly connected, GigabitEthernet0/0
+C       10.10.20.0/24 is directly connected, GigabitEthernet0/1
+L       10.10.20.1/32 is directly connected, GigabitEthernet0/1
