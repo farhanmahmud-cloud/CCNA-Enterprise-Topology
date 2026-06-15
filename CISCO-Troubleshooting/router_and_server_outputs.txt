@@ -1,0 +1,38 @@
+! ==========================================
+! R2 - Interface Troubleshooting and Fix
+! ==========================================
+R2# show ip interface brief
+! Noticed FastEthernet0/0 was administratively down
+
+R2# configure terminal
+R2(config)# interface f0/0
+R2(config-if)# no shutdown
+R2(config-if)# exit
+
+! ==========================================
+! R3 - Connectivity Testing and DNS Fix
+! ==========================================
+R3# telnet 10.10.10.10
+! Connection timed out
+
+R3# ping 10.10.10.10
+! Failed (U.U.U)
+
+R3# traceroute 10.10.10.10
+! Dropped after 10.10.20.2 (R2)
+
+! After R2 interface was brought up:
+R3# ping 10.10.10.10
+! Success (!!!!!)
+
+R3# ping R1
+! Failed: Translating "R1"...domain server (10.10.10.1)
+
+R3# configure terminal
+R3(config)# no ip name-server 10.10.10.1
+R3(config)# ip name-server 10.10.10.10
+R3(config)# exit
+
+! Final Verification
+R3# ping R1
+! Success (!!!!!)
