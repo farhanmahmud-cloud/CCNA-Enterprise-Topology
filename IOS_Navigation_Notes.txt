@@ -1,4 +1,0 @@
-# Cisco IOS Basic Navigation Cheat Sheet
-# Quick reference for user EXEC mode, privileged EXEC mode, and global configuration mode commands.
-
-Commands: enable, configure terminal, exit, logout
