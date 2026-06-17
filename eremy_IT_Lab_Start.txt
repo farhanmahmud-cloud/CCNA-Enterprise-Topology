@@ -1,4 +1,0 @@
-# Jeremy's IT Lab CCNA Course Initial Setup
-# Tracking course progression and setting up local directories for daily Packet Tracer labs.
-
-Current Milestone: Commencing Day 1 to Day 3 fundamentals pass.
