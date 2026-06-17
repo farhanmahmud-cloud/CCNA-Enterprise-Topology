@@ -1,4 +1,0 @@
-# CLI Command Scratchpad
-# Reserving this file to quickly dump and format running-configs before pushing to production labs.
-
-Current focus: Staging basic VLAN and OSPF routing commands for upcoming topology builds.
