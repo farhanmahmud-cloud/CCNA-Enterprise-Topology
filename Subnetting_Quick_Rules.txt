@@ -1,0 +1,10 @@
+# Mental Math Subnetting Reference
+# Core block sizes for rapid calculation during CLI configuration sessions.
+
+/24 = 256 IPs (254 usable)
+/25 = 128 IPs (126 usable)
+/26 = 64 IPs  (62 usable)
+/27 = 32 IPs  (30 usable)
+/28 = 16 IPs  (14 usable)
+/29 = 8 IPs   (6 usable)
+/30 = 4 IPs   (2 usable)
